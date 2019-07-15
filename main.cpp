@@ -27,15 +27,24 @@
 #include <iostream>
 #include <iomanip>
 
-int main()
+int main(int argc, char *argv[])
 {
 	int num = 0;
-	while(num < 1)
+	if(argc == 2)
 	{
-		std::cout << "Enter star num >= 1: ";
-		std::cin >> num;
+		std::string temp = argv[1];
+		num = std::stoi(temp);
 	}
-	std::cout << "\n";
+	else 
+	{
+		while(num < 1)
+		{
+			std::cout << "Enter star num >= 1: ";
+			std::cin >> num;
+		}
+		std::cout << "\n";
+	}
+	
 	
 	int spacing = 2 * num - 1;	//Magic number
 	
